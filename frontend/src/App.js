@@ -12,7 +12,6 @@ const App = () => {
       <Router>
         <Header/>
       <main 
-      //className='py-3'
       className="py-3 d-flex align-items-center justify-content-center" 
       style={{backgroundColor:"black",display: 'flex', justifyContent: 'center'}}
       >
