@@ -30,7 +30,7 @@ function LoginScreen({location, history}) {
     }    
     return (
         <FormContainer>
-            <h1>Sign In</h1> 
+            <h1 style={{color:"red"}}>Sign In</h1> 
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
             <Form onSubmit={submitHandler}>
@@ -59,7 +59,7 @@ function LoginScreen({location, history}) {
             <Row className='py-3'>
                 <Col>
                 New Customer?{' '}
-                <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+                <Link to={redirect ? `/register?redirect=${redirect}` : '/register'} style={{color:"red"}}>
                     Register
                 </Link>
                 </Col>
