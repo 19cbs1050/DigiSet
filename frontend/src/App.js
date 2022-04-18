@@ -17,7 +17,10 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className='py-3'>
+      <main 
+      className="py-3 d-flex align-items-center justify-content-center" 
+      style={{backgroundColor:"black",display: 'flex', justifyContent: 'center'}}
+      >
         <Container>
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
