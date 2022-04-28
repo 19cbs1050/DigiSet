@@ -18,18 +18,15 @@ const authUser = asyncHandler(async(req,res) =>{
             isAdmin: user.isAdmin,
             token: generateToken(user._id),
         })
-    }
-    else{
+    }else{
         res.status(401)
         throw new Error('Invalid Email or Password')
     }
 })
 
-
 // @desc    Register a new user
 // @route   POST /api/users
 // @access  Public
-
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body
 
@@ -63,9 +60,7 @@ const registerUser = asyncHandler(async (req, res) => {
 // @desc    Get User Profile
 // @route   GET /api/users/profile
 // @access  Private
-
 const getUserProfile = asyncHandler(async(req,res) =>{
-    
     const user = await User.findById(req.user._id)
 
     if(user){
@@ -75,8 +70,7 @@ const getUserProfile = asyncHandler(async(req,res) =>{
             email: user.email,
             isAdmin: user.isAdmin,
         })
-    }
-    else{
+    }else{
         res.status(404)
         throw new Error('User Not Found')
     }
@@ -110,4 +104,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-export { authUser, registerUser, getUserProfile, updateUserProfile }
+// @desc    Get all users
+// @route   GET /api/users
+// @access  Private/Admin
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({})
+  res.json(users)
+})
+
+export { authUser, registerUser, getUserProfile, updateUserProfile, getUsers }
