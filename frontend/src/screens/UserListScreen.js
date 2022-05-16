@@ -34,7 +34,7 @@ const UserListScreen = ({ history }) => {
   
   return (
     <>
-      <h1>Users</h1>
+      <h1 style={{color:"red"}}>Users</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -55,7 +55,7 @@ const UserListScreen = ({ history }) => {
               <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
-                <td>
+                <td >
                   <a href={`mailto:${user.email}`}>{user.email}</a>
                 </td>
                 <td>
