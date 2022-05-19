@@ -25,7 +25,7 @@ const App = () => {
       <Header />
       <main 
       className="py-3 d-flex align-items-center justify-content-center" 
-      style={{backgroundColor:"black",display: 'flex', justifyContent: 'center'}}
+      style={{backgroundColor:"white",display: 'flex', justifyContent: 'center'}}
       >
         <Container>
           <Route path='/order/:id' component={OrderScreen} />
