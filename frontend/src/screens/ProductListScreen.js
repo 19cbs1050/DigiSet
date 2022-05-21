@@ -72,9 +72,10 @@ const ProductListScreen = ({ history, match }) => {
 
   return (
     <>
+    <div style={{backgroundColor:"white", padding:"20px 100px", borderRadius:"20px"}}>
       <Row className='align-items-center'>
         <Col>
-          <h1>Products</h1>
+          <h1 style={{color:"red"}}>Products</h1>
         </Col>
         <Col className='text-right'>
           <Button className='my-3' onClick={createProductHandler}>
@@ -92,9 +93,10 @@ const ProductListScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+        
           <Table striped bordered hover responsive className='table-sm'>
             <thead>
-              <tr>
+              <tr style={{color:"blue", fontSize:"25px", fontFamily:"sans-serif"}}>
                 <th>ID</th>
                 <th>NAME</th>
                 <th>PRICE</th>
@@ -103,7 +105,7 @@ const ProductListScreen = ({ history, match }) => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style={{color:"grey", fontSize:"15px"}}>
               {products.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>
@@ -132,6 +134,7 @@ const ProductListScreen = ({ history, match }) => {
           <Paginate pages={pages} page={page} isAdmin={true} />
         </>
       )}
+      </div>
     </>
   )
 }

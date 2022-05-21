@@ -91,11 +91,12 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <>
+    <div style={{backgroundColor:"white", padding:"20px 100px", borderRadius:"20px"}}>
       <Link to='/admin/productlist' className='btn btn-light my-3'>
         Go Back
       </Link>
       <FormContainer>
-        <h1>Edit Product</h1>
+        <h1 style={{color:"red"}}>Edit Product</h1>
         {loadingUpdate && <Loader />}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? (
@@ -180,6 +181,7 @@ const ProductEditScreen = ({ match, history }) => {
           </Form>
         )}
       </FormContainer>
+      </div>
     </>
   )
 }

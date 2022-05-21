@@ -34,6 +34,8 @@ const UserListScreen = ({ history }) => {
   
   return (
     <>
+      <div style={{backgroundColor:"white", padding:"20px 100px", borderRadius:"20px"}}>
+
       <h1 style={{color:"red"}}>Users</h1>
       {loading ? (
         <Loader />
@@ -42,7 +44,7 @@ const UserListScreen = ({ history }) => {
       ) : (
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
-            <tr>
+            <tr  style={{color:"blue", fontSize:"25px", fontFamily:"sans-serif"}}>
               <th>ID</th>
               <th>NAME</th>
               <th>EMAIL</th>
@@ -50,13 +52,13 @@ const UserListScreen = ({ history }) => {
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{color:"grey", fontSize:"15px"}}>
             {users.map((user) => (
               <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td >
-                  <a href={`mailto:${user.email}`}>{user.email}</a>
+                  <a style={{color:"grey", fontSize:"20px"}}  href={`mailto:${user.email}`}>{user.email}</a>
                 </td>
                 <td>
                   {user.isAdmin ? (
@@ -84,6 +86,7 @@ const UserListScreen = ({ history }) => {
           </tbody>
         </Table>
       )}
+      </div>
     </>
   )
 }

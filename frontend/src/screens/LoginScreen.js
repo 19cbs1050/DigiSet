@@ -29,6 +29,8 @@ function LoginScreen({location, history}) {
         dispatch(login(email, password))
     }    
     return (
+        <div style={{backgroundColor:"white", padding:"50px 100px", borderRadius:"20px"}}>
+
         <FormContainer>
             <h1 style={{color:"red"}}>Sign In</h1> 
             {error && <Message variant='danger'>{error}</Message>}
@@ -66,6 +68,7 @@ function LoginScreen({location, history}) {
             </Row>
 
         </FormContainer>
+        </div>
     )
 }
 

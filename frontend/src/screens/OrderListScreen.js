@@ -25,7 +25,8 @@ const OrderListScreen = ({ history }) => {
 
   return (
     <>
-      <h1>Orders</h1>
+    <div style={{backgroundColor:"white", padding:"20px 100px", borderRadius:"20px"}}>
+      <h1 style={{color:"red"}}>Orders</h1>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -33,7 +34,7 @@ const OrderListScreen = ({ history }) => {
       ) : (
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
-            <tr>
+            <tr style={{color:"blue", fontSize:"25px", fontFamily:"sans-serif"}}>
               <th>ID</th>
               <th>USER</th>
               <th>DATE</th>
@@ -43,7 +44,7 @@ const OrderListScreen = ({ history }) => {
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{color:"grey", fontSize:"15px"}} >
             {orders.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>
@@ -76,6 +77,7 @@ const OrderListScreen = ({ history }) => {
           </tbody>
         </Table>
       )}
+      </div>
     </>
   )
 }
