@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "digiset",
+  "builds": [
+    {
+      "src": "./backend/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "./backend/(.*)",
+      "use": "./backend/server.js"
+    }
+  ]
+}
