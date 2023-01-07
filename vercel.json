@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "./backend/(.*)",
-      "use": "./backend/server.js"
+      "dest": "./backend/server.js"
     }
   ]
 }
